@@ -196,10 +196,11 @@ bindsym XF86AudioPrev exec playerctl previous
 for_window [class="^.*"] border pixel 0
 
 #Custom Shortcuts
-bindsym $mod+l exec /home/calle/.config/i3/i3lock-multimonitor/lock
+bindsym $mod+l exec /home/$USER/.config/i3/i3lock-multimonitor/lock
 bindsym $mod+shift+c exec flameshot gui
 bindsym $mod+d exec rofi -show run
 bindsym $mod+n exec firefox
+bindsym $mod+shift+p exec /home/$USER/.config/i3/scripts/kill_picom.sh
 
 #Gaps
 gaps inner 10
@@ -210,6 +211,8 @@ workspace $ws1 gaps inner 0
 workspace $ws1 gaps outer 0
 workspace $ws9 gaps inner 0
 workspace $ws9 gaps outer 0
+workspace $ws7 gaps inner 0
+workspace $ws7 gaps outer 0
 
 #Workspace monitor
 workspace $ws1 output DP-2
@@ -224,8 +227,8 @@ workspace $ws5 output HDMI-0
 bindsym $mod+x move workspace to output DP-5 DP-2 HDMI-0
 
 #Execute programs
-exec_always xrandr --output HDMI-0 --mode 1920x1080 --pos 3840x0 --rotate normal --output DP-0 --off --output DP-1 --off --output DP-2 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-3 --off --output DP-4 --off --output DP-5 --mode 1920x1080 --pos 0x0 --rotate normal
-exec_always sleep 1 && feh --bg-scale /home/calle/.config/i3/wallpaper.jpg
+exec_always xrandr --output HDMI-0 --mode 1920x1080 --pos 3840x0 --rotate normal --output DP-0 --off --output DP-1 --off --output DP-2 --primary --mode 1920x1080 --rate 280 --pos 1920x0 --rotate normal --output DP-3 --off --output DP-4 --off --output DP-5 --mode 1920x1080 --pos 0x0 --rotate normal
+exec_always sleep 1 && feh --bg-scale /home/$USER/.config/i3/wallpaper.jpg
 exec_always picom --experimental-backends
 #exec_always /home/$USER/.config/i3/scripts/xborder/xborders
 exec discord
@@ -249,6 +252,9 @@ assign [class="Alacritty"] $ws5
 assign [class="Steam"] $ws6
 assign [class="Lutris"] $ws2
 assign [class="csgo_linux64"] $ws6
+assign [class="battle.net.exe"] $ws2
+assign [class="wowclassic.exe"] $ws2
+assign [class="explorer.exe"] $ws2
 
 #Screenshots
 bindsym $mod+shift+h exec --no-startup-id maim "/home/$USER/Pictures/$(date)"

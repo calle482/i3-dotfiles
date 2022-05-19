@@ -10,4 +10,4 @@ Needed Packages
 
 Optional Packages
 -----------------
-<a href="https://github.com/spicetify/" >Spicetify</a>
+<a href="https://github.com/spicetify/spicetify-cli" >Spicetify</a>

@@ -198,7 +198,8 @@ for_window [class="^.*"] border pixel 0
 #Custom Shortcuts
 bindsym $mod+l exec /home/$USER/.config/i3/i3lock-multimonitor/lock
 bindsym $mod+shift+c exec flameshot gui
-bindsym $mod+d exec rofi -show run
+Bindsym $mod+d exec rofi -show run -show-icons -icon-theme "Papirus"
+#bindsym $mod+d exec /home/$USER/.config/rofi/launchers/misc/launcher.sh
 bindsym $mod+n exec firefox
 bindsym $mod+shift+p exec /home/$USER/.config/i3/scripts/kill_picom.sh
 
@@ -232,7 +233,7 @@ exec_always sleep 1 && feh --bg-scale /home/$USER/.config/i3/wallpaper.jpg
 exec_always picom --experimental-backends
 #exec_always /home/$USER/.config/i3/scripts/xborder/xborders
 exec discord
-exec /home/$USER/.config/i3/scripts/start_obs_with_replay_buffer.sh
+exec sleep 10 && /home/$USER/.config/i3/scripts/start_obs_with_replay_buffer.sh
 exec /home/$USER/.config/i3/scripts/polybar.sh
 exec spotify
 exec firefox
@@ -242,7 +243,7 @@ exec lutris
 exec alacritty
 exec --no-startup-id /usr/lib/gsd-xsettings
 exec flameshot
-exec --no-startup-id /home/$USER/.config/i3/alternating_layouts.py
+exec_always --no-startup-id /home/$USER/.config/i3/alternating_layouts.py
 
 #Assign workspaces
 assign [class="discord"] $ws3

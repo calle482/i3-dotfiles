@@ -6,7 +6,7 @@ My dotfiles for i3 and programs that I use.
 
 Needed Packages
 ---------------
-`i3-gaps picom alacritty polybar rofi feh`
+`i3-gaps picom alacritty polybar rofi feh papirus-icon-theme`
 
 Optional Packages
 -----------------

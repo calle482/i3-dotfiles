@@ -194,6 +194,8 @@ bindsym XF86AudioPrev exec playerctl previous
 
 #Disable title bars
 for_window [class="^.*"] border pixel 0
+for_window [class="firefox"] border pixel 0
+default_border normal
 
 #Custom Shortcuts
 bindsym $mod+l exec /home/$USER/.config/i3/i3lock-multimonitor/lock
@@ -229,8 +231,8 @@ workspace $ws5 output HDMI-0
 bindsym $mod+x move workspace to output DP-5 DP-2 HDMI-0
 
 #Execute programs
-exec_always xrandr --output HDMI-0 --mode 1920x1080 --pos 3840x0 --rotate normal --output DP-0 --off --output DP-1 --off --output DP-2 --primary --mode 1920x1080 --rate 280 --pos 1920x0 --rotate normal --output DP-3 --off --output DP-4 --off --output DP-5 --mode 1920x1080 --pos 0x0 --rotate normal
-exec_always sleep 1 && feh --bg-scale /home/$USER/.config/i3/mountains.png
+exec_always xrandr --output HDMI-0 --mode 1920x1080 --pos 3840x0 --rotate normal --set TearFree on --output DP-0 --off --output DP-1 --off --output DP-2 --primary --mode 1920x1080 --rate 280 --pos 1920x0 --rotate normal --set TearFree on --output DP-3 --off --output DP-4 --off --output DP-5 --mode 1920x1080 --pos 0x0 --rotate normal --set TearFree on
+exec_always sleep 1 && feh --bg-scale /home/$USER/.config/i3/forest.jpg
 exec_always picom --experimental-backends
 #exec_always /home/$USER/.config/i3/scripts/xborder/xborders
 exec discord
